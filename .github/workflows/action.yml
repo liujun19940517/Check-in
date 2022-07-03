@@ -18,8 +18,10 @@ jobs:
             pushplus_token: PUSHPLUS_TOKEN
             serverchan_key: SERVERCHAN_KEY
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Working
-        uses: zzyyuanmi/zju-ncov-hitcarder@master
+        uses: koala189/AutoHitCarder@main
         with:
           username: ${{ secrets[matrix.username] }}
           password: ${{ secrets[matrix.password] }}
